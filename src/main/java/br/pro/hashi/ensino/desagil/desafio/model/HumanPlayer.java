@@ -1,10 +1,17 @@
 package br.pro.hashi.ensino.desagil.desafio.model;
 
+import javax.swing.*;
 import java.util.Stack;
 
 public class HumanPlayer extends Player {
+    private Timer timer;
+
     HumanPlayer(int row,int col,   Board board) {
         super(row,   col,board);
+    }
+
+    public void move(int rowShift, int colShift) {
+        super.move(rowShift, colShift);
     }
 
     void moveUp() {
@@ -29,5 +36,9 @@ public class HumanPlayer extends Player {
         if (col  >0 && !board.isWall(row,col - 1)) {
             move(0, -1)  ;
         }
+    }
+
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
 }
