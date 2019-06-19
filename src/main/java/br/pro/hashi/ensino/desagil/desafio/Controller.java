@@ -65,8 +65,23 @@ public class Controller implements KeyListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         CpuPlayer cpuPlayer = model.getCpuPlayer();
+        HumanPlayer humanPlayer = model.getHumanPlayer();
 
-        cpuPlayer.move();
+        int yH = humanPlayer.getCol();
+        int xH = humanPlayer.getRow();
+        int yC = cpuPlayer.getCol();
+        int xC = cpuPlayer.getCol();
+
+        int distanciax = Math.abs(xH - xC);
+        int distanciay = Math.abs(yH - yC);
+
+        if (distanciax + distanciay < (9 + 19) / 2) {
+            cpuPlayer.move();
+            cpuPlayer.move();
+        } else {
+            cpuPlayer.move();
+        }
+
 
         view.repaint();
     }

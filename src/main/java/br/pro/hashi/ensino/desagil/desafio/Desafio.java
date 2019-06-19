@@ -43,7 +43,7 @@ public class Desafio {
             // Inicia o relógio.
             timer.start();
 
-            model.getHumanPlayer().setTimer(timer);
+            model.getHumanPlayer().setTimer();
         });
     }
 }

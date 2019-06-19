@@ -11,11 +11,11 @@ public class Model {
     public Model() throws IOException {
         board = new Board("board.txt");
 
-        target = new Target(4, 14, board);
+        target = new Target(4, 14);
 
-        humanPlayer = new HumanPlayer(0, 0, board);
+        humanPlayer = new HumanPlayer(board);
 
-        cpuPlayer = new CpuPlayer(8, 18, board);
+        cpuPlayer = new CpuPlayer(board);
     }
 
     public Board getBoard() {
